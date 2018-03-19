@@ -20,9 +20,15 @@ export class PatientsService {
     getPatients(): Observable<IPatient[]> {
         return this._http.get<IPatient[]>(this._patientsUrl)
             .do( data => console.log( 'All ' + JSON.stringify(data))  )
-            .catch( this.handleError );
-            
+            .catch( this.handleError );            
     }
+
+    getPatient(id: number): Observable<IPatient> {
+        return this._http.get<IPatient[]>(this._patientsUrl + "/" + id)
+            .do( data => console.log( 'All ' + JSON.stringify(data))  )
+            .catch( this.handleError );            
+    }
+
 
     private handleError(err: HttpErrorResponse) {
         return Observable.throw(err);

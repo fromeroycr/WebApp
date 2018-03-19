@@ -10,17 +10,17 @@
                     *ngIf='patients && patients.length' >
                 <thead>
                     <tr>                        
-                        <th>Name</th>
-                        <th>Age</th>                        
-                        <th>Gender</th>
-                        
+                        <th>Name</th>                        
                     </tr>
                 </thead>
                 <tbody>
                     <tr *ngFor='let patient of patients'>                                                                        
-                        <td> {{ patient.Name }} </td>
-                        <td> {{ patient.Age }} </td>
-                        <td> {{ patient.Gender }} </td>                        
+                        <td>
+                            <a [routerLink]="['/patient', patient.PatientID]">
+                            {{ patient.Name }}
+                            </a>
+                        </td>
+                                
                     </tr>
                 </tbody>
 

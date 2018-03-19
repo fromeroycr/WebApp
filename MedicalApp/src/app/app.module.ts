@@ -7,14 +7,15 @@ import { AppComponent } from './app.component';
 import { WelcomeComponent } from "./home/welcome.component";
 import { PatientListComponent } from './patients/patient-list.component';
 import { PatientsService } from './patients/patients.service'
-
-
+import { PatientsModule } from './patients/patients.module'
+import { PatientDetailComponent } from './patients/patient-detail.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     WelcomeComponent,
-    PatientListComponent
+    PatientListComponent,
+    PatientDetailComponent
   ],  
   providers: [
     PatientsService    
@@ -26,10 +27,12 @@ import { PatientsService } from './patients/patients.service'
     RouterModule.forRoot( [        
         { path: 'welcome', component: WelcomeComponent },
         { path: 'patients', component:  PatientListComponent },
+        { path: 'patient/:PatientID', component: PatientDetailComponent },
         { path: '', redirectTo: 'welcome', pathMatch: 'full'},
         { path: '**', redirectTo: 'welcome', pathMatch: 'full' }
       ]
-    )    
+    )
+        
   ],
   bootstrap: [AppComponent]
 })

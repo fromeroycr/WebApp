@@ -1,0 +1,37 @@
+
+
+<div class='panel panel-primary' *ngIf='patient'>
+  <div class='panel-heading'>
+      {{pageTitle + ': ' + patient.Name}}
+  </div>
+
+  <div class='panel-body'>
+      <div class='row'>
+          <div class='col-md-6'>
+              <div class='row'>
+                  <div class='col-md-3'>Age:</div>
+                  <div class='col-md-6'>{{patient.Age}}</div>
+              </div>
+              
+              <div class='row'>
+                  <div class='col-md-3'>Gender:</div>
+                  
+                  <div [ngSwitch]="patient.Gender" class='col-md-6'>
+                        <span *ngSwitchCase="'0'">Male</span>
+                        <span *ngSwitchCase="'1'">Female</span>
+                  </div>
+                  
+              </div>              
+          </div>
+
+          <div class='col-md-6'>              
+          </div>
+      </div>
+  </div>
+
+  <div class='panel-footer'>
+      <a class='btn btn-default' (click)='onBack()' style='width:80px'>
+          <i class='glyphicon glyphicon-chevron-left'></i> Back
+      </a>
+  </div>
+</div>
