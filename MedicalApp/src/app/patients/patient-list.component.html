@@ -1,0 +1,32 @@
+<div class='panel panel-primary'>
+    <div class='panel-heading'>
+        {{pageTitle}}
+    </div>
+
+    <div class='panel-body'>                      
+        
+        <div class='table-responsive'>
+            <table class='table'
+                    *ngIf='patients && patients.length' >
+                <thead>
+                    <tr>                        
+                        <th>Name</th>
+                        <th>Age</th>                        
+                        <th>Gender</th>
+                        
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor='let patient of patients'>                                                                        
+                        <td> {{ patient.Name }} </td>
+                        <td> {{ patient.Age }} </td>
+                        <td> {{ patient.Gender }} </td>                        
+                    </tr>
+                </tbody>
+
+            </table>
+        </div>
+
+    </div>
+
+</div>
