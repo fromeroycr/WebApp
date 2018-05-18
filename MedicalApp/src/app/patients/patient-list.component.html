@@ -10,7 +10,9 @@
                     *ngIf='patients && patients.length' >
                 <thead>
                     <tr>                        
-                        <th>Name</th>                        
+                        <th>Name</th> 
+                        <th>Age</th> 
+                        <th>Actions</th>                        
                     </tr>
                 </thead>
                 <tbody>
@@ -20,13 +22,24 @@
                             {{ patient.Name }}
                             </a>
                         </td>
-                                
+                        <td>
+                            {{ patient.Age }}
+                        </td>
+                        <td>
+                            <a class="btn btn-sm btn-primary" [routerLink]="['/patient', patient.PatientID]">
+                                Edit
+                            </a>
+                            <a class="btn btn-sm btn-primary" [routerLink]="['/patient', patient.PatientID]">
+                                Delete
+                            </a>
+                            <a class="btn btn-sm btn-primary" [routerLink]="['/patient', patient.PatientID]">
+                                Create Appointment
+                            </a>
+                        </td>
                     </tr>
                 </tbody>
-
             </table>
         </div>
-
     </div>
 
 </div>

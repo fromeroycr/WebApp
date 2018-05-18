@@ -14,18 +14,18 @@
               </div>
               
               <div class='row'>
-                  <div class='col-md-3'>Gender:</div>
-                  
-                  <div [ngSwitch]="patient.Gender" class='col-md-6'>
-                        <span *ngSwitchCase="'0'">Male</span>
-                        <span *ngSwitchCase="'1'">Female</span>
-                  </div>
-                  
-              </div>              
+                    <div class='col-md-3'>Gender:</div>
+                   
+                    <div>
+                         <select [(ngModel)]="selectedGenderId" name="fieldStatus" > 
+                             <option *ngFor="let gender of genders" [value]="gender.value">{{gender.name}}</option>
+                         </select>
+                     </div>
+                   
+               </div>                 
           </div>
 
-          <div class='col-md-6'>              
-          </div>
+          
       </div>
   </div>
 

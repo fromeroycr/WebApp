@@ -18,13 +18,13 @@ export class PatientsService {
     }
 
     getPatients(): Observable<IPatient[]> {
-        return this._http.get<IPatient[]>(this._patientsUrl)
+        return this._http.get<IPatient[]>(this._patientsUrl + "/GetPatients")
             .do( data => console.log( 'All ' + JSON.stringify(data))  )
             .catch( this.handleError );            
     }
 
     getPatient(id: number): Observable<IPatient> {
-        return this._http.get<IPatient[]>(this._patientsUrl + "/" + id)
+        return this._http.get<IPatient[]>(this._patientsUrl + "/GetPatient/" + id)
             .do( data => console.log( 'All ' + JSON.stringify(data))  )
             .catch( this.handleError );            
     }
