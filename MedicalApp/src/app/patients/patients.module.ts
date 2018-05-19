@@ -3,9 +3,7 @@ import { PatientListComponent } from './patient-list.component';
 import { PatientDetailComponent } from './patient-detail.component';
 
 import { RouterModule } from '@angular/router';
-
 import { PatientsService } from './patients.service';
-
 
 @NgModule({
   imports: [
@@ -15,7 +13,7 @@ import { PatientsService } from './patients.service';
     ])
   ],
   declarations: [
-    PatientsService,
+    PatientsService,    
     PatientDetailComponent    
   ],
   providers: [

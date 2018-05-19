@@ -35,6 +35,7 @@ export class PatientDetailComponent implements OnInit {
 
   getPatient(id: number) {
     this._patientsService.getPatient(id).subscribe(
+      
       patient => {
         this.patient = patient;
         this.selectedGenderId = patient.Gender;        
