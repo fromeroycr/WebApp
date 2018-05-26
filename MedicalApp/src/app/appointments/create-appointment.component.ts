@@ -17,6 +17,7 @@ export class CreateAppointmentComponent implements OnInit {
   patient: IPatient;
   appointmentTypes: IAppointmentType[] = [];
   errorMessage: string;
+  selectedAppointmentType: number;
 
   constructor(private _route: ActivatedRoute, private _patientsService: PatientsService, private _appointmentTypesService: AppointmentTypesService)  
   {  }
@@ -24,6 +25,7 @@ export class CreateAppointmentComponent implements OnInit {
   ngOnInit() {
     const id =+ this._route.snapshot.paramMap.get('PatientID');
     this.getPatient(id);
+    this.getAppointmentTypes();
   }
 
   getPatient(id: number){
@@ -41,8 +43,9 @@ export class CreateAppointmentComponent implements OnInit {
   getAppointmentTypes(){
     this._appointmentTypesService.getAppointmentTypes().subscribe(
       appointmentTypes => {
-        debugger;
+        
         this.appointmentTypes = appointmentTypes;
+        this.selectedAppointmentType = appointmentTypes[0].AppointmentTypeID;
       },
       error => this.errorMessage = <any> error
     );

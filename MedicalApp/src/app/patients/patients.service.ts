@@ -19,13 +19,23 @@ export class PatientsService {
 
     getPatients(): Observable<IPatient[]> {
         return this._http.get<IPatient[]>(this._patientsUrl + "/GetPatients")
-            .do( data => console.log( 'All ' + JSON.stringify(data))  )
+            .do( 
+                data =>{                    
+                     //console.log( 'All ' + JSON.stringify(data));
+                     console.log( 'GetPatients ' ) ;
+                }
+            
+
+            )
             .catch( this.handleError );            
     }
 
     getPatient(id: number): Observable<IPatient> {
         return this._http.get<IPatient[]>(this._patientsUrl + "/GetPatient/" + id)
-            .do( data => console.log( 'All ' + JSON.stringify(data))  )
+            .do(  data => { 
+                //console.log( 'Get Patient ' + JSON.stringify(data)); 
+                console.log( 'Get Patient ' ) ; 
+            } )
             .catch( this.handleError );            
     }
 

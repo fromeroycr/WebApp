@@ -11,14 +11,18 @@ import { IAppointmentType } from './appointmenttype';
 @Injectable()
 export class AppointmentTypesService {
 
-  private _appointmentTypesUrl =  ApiInfo.ApiUrl +  'AppointmentTypes/GetAppointmentTypes';
+  private _appointmentTypesUrl =  ApiInfo.ApiUrl +  'AppointmentTypes/GetAppointmentTypes'; 
 
   constructor(private _http: HttpClient) { }  
   
   getAppointmentTypes(): Observable<IAppointmentType[]>  {
+
     return this._http.get<IAppointmentType[]> (this._appointmentTypesUrl)
-      .do(data => console.log('Appointment Types' + JSON.stringify(data)))
+      .do(data => {         
+        console.log('Appointment Types' + JSON.stringify(data));
+      } )
       .catch(this.handleError);
+
   }  
 
   handleError(error: HttpErrorResponse){

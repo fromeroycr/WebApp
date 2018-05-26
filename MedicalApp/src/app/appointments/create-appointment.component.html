@@ -6,38 +6,38 @@
 
   <div class='panel-body'>
     <div class='row'>
-      <div class='col-md-6'>
+      <div class='col-md-8'>
 
         <div class='row'>
           <div class='col-md-3'> Name: </div>
-          <div class='col-md-6'> {{patient.Name}} </div>
+          <div class='col-md-5'> {{patient.Name}} </div>
          </div>
 
         <div class='row'>
-            <div class='col-md-3'> Select Appointment Type: </div>            
-
-            <div >
-                <select [(ngModel)]="selectedAppointmentType">
-                  <option *ngFor="let appointmentType of appointmentTypes">{{appointmentType.Descripcion}}  </option>
+            <div class='col-md-3'> Select Appointment Type: </div>                        
+            <div class="col-md-5" >
+                <select [(ngModel)]="selectedAppointmentType" >
+                  <option *ngFor="let appointmentType of appointmentTypes" [ngValue]="appointmentType.AppointmentTypeID" [selected]="appointmentType.Descripcion == 'Medicina General' " >{{appointmentType.Descripcion}}  </option>
                 </select>
-              </div>  
+            </div>              
         </div>
-        
-
 
          <div class='row'>
           <div class="col-md-3"> Gender:</div>
-          <div class="col-md-6">             
-            
+          <div class="col-md-5">                         
             <div *ngIf="patient.Gender; else femaleGender"> Male  </div>
             <ng-template #femaleGender>Female</ng-template>            
-
           </div>
          </div>
 
         <div class='row'>
           <div class='col-md-3'> Age: </div>
-          <div class='col-md-6'> {{patient.Age}} </div>
+          <div class='col-md-5'> {{patient.Age}} </div>
+        </div>
+
+        <div class='row'>
+          <div class='col-md-3'> Appointment date: </div>
+          <input type="datetime-local" />
         </div>
       </div>
     </div>
