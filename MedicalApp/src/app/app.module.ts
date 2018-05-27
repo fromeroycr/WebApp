@@ -11,6 +11,7 @@ import { PatientsModule } from './patients/patients.module';
 import { PatientDetailComponent } from './patients/patient-detail.component';
 import { AppointmentTypesService } from './appointmenttypes/appointmenttypes.service';
 import { CreateAppointmentComponent } from './appointments/create-appointment.component';
+import { AppointmentsService } from './appointments/appointments.service';
 
 
 
@@ -23,8 +24,9 @@ import { CreateAppointmentComponent } from './appointments/create-appointment.co
     CreateAppointmentComponent    
   ],  
   providers: [
-    PatientsService
-    ,   AppointmentTypesService    
+    PatientsService,
+    AppointmentTypesService,
+    AppointmentsService    
   ],
 
   imports: [

@@ -47,12 +47,13 @@
             <label for="staticName" class="col-sm-2 col-form-label"> Appointment date:</label>
             
             <div class="col-sm-10">
-              <input type="datetime-local" />
+              <input type="datetime-local" [(ngModel)]="appointmentDate" name="appointmentDate" />
             </div>
         </div>          
-        <button type="submit" class="btn btn-default" >Create Appointment</button>        
+        <button type="submit" class="btn btn-default" >Create Appointment</button>
+        <span>{{message}}</span>        
       </form>     
-      
+     
     </div>
   </div>
 

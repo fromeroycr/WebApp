@@ -33,6 +33,7 @@ export class PatientsService {
             .catch( this.handleError );            
     }
 
+    
 
     private handleError(err: HttpErrorResponse) {
         return Observable.throw(err);
