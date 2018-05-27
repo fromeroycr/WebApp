@@ -50,4 +50,8 @@ export class CreateAppointmentComponent implements OnInit {
       error => this.errorMessage = <any> error
     );
   }
+
+  onSubmit() {
+    console.log("Submitted Create Appointment");
+  }
 }
