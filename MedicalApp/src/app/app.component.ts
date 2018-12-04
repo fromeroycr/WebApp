@@ -5,8 +5,8 @@ import { Component } from '@angular/core';
   selector: 'pm-root',
   template: `
     <div>
-        <nav class='navbar navbar-default'>
-          <div class='container-fluid'>
+        <nav class='navbar navbar-dark bg-primary'>
+          <div class='container'>
             <a class='navbar-brand'> {{pageTitle}} </a>
             <ul class='nav navbar-nav'>
                 <li><a [routerLink]="['/welcome']">Home</a></li>
